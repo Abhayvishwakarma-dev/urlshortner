@@ -11,6 +11,8 @@ const urlRouter = require("./routes/url");
 
 const app=express()
 
+// real ip ke liye
+app.set("trust proxy", 1);
 
 const allowedOrigins = [
    process.env.FRONTEND_URL,

@@ -65,9 +65,10 @@ async function handleRedirect(req, res) {
         });
     }
      
-    // Click record
+   // Visitor information
     entry.visitHistory.push({
-        timestamp: Date.now()
+        ip: req.ip,
+        timestamp: new Date()
     });
 
     await entry.save();
