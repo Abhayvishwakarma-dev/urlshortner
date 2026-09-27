@@ -1325,6 +1325,37 @@
         ? "http://localhost:8001"
         : "https://urlshortner-vnbg.onrender.com";
 
+
+
+            // ============================================
+    // BACKEND HEALTH CHECK
+    // ============================================
+
+    setTimeout(async function () {
+
+        try {
+
+            const response = await fetch(
+                `${API_BASE_URL}/url/health`
+            );
+
+            const data = await response.text();
+
+            console.log("Backend:", data);
+
+        } catch (error) {
+
+            console.error(
+                "Backend health check failed:",
+                error
+            );
+
+        }
+
+    }, 5000);
+
+
+
     // ============================================
     // ELEMENTS
     // ============================================
